@@ -1,0 +1,42 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Signup</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="signupForm" class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="username" type="text" matInput placeholder="Username">
+                    <mat-error *ngIf="signupForm.controls.username.touched && signupForm.controls.username.invalid">
+                        <span *ngIf="signupForm.controls.username.errors.required">Userame is mandatory!</span>
+                        <span *ngIf="signupForm.controls.username.errors.pattern">Invalid user username!</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="email" type="email" matInput placeholder="Email">
+                    <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
+                        <span *ngIf="signupForm.controls.email.errors.required">Email is mandatory!</span>
+                        <span *ngIf="signupForm.controls.email.errors.pattern">Invalid user email!</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="password" type="password" matInput placeholder="Password">
+                    <mat-error *ngIf="signupForm.controls.password.touched && signupForm.controls.password.invalid">
+                        <span *ngIf="signupForm.controls.password.errors.required">Password is mandatory!</span>
+                        <span *ngIf="signupForm.controls.password.errors.pattern">Passowrd must contains 8 character,
+                            and at least 1 uppercase, lowecase and number!</span>
+                    </mat-error>
+                </mat-form-field>
+                <!-- <mat-form-field class="example-full-width">
+                    <mat-label>Choose a role...</mat-label>
+                    <mat-select>
+                        <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field> -->
+            </mat-card-content>
+            <button mat-stroked-button class="btn-block" (click)="resetForm()">Clear</button>
+            <button mat-stroked-button color="accent" [disabled]="!(signupForm.valid && signupForm.dirty)" class="btn-block" (click)="handleSubmit()">Signup</button>
+        </form>
+    </mat-card>
+</div>
