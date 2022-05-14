@@ -40,6 +40,7 @@ JWT_SEC = nikhil
 
 How to run :
 		1. Run command 'npm install'
+		
 		2. Once insatlled then run 'ng s -o'
 
 ******************************************** FRONTEND *******************************************/
