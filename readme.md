@@ -1,4 +1,5 @@
 /******************************************** BACKEND *******************************************
+
 ::Steps for configuration::
 1. Create '.env' file and write the configuration below:
 PORT = (select your prefered port number)
